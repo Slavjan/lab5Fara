@@ -1,36 +1,73 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "searh.h"
+#include "include/searh.h"
 
-char *searh(char * str1, char *result)
+char *search(char *str1)
 {
-    int i = 0;//счетчик
-    char strname[256];//имя пользователя
-    if (str1[i] == '~')//если строка начта с символв ~
-    {
-        i ++;// + один символ
-        if (str1[i] == '/')//если дальше /
-        {
-            return "Path relative to current user home directory.";//путь указан до директории текущего пользователя
-        }
-        else//иначе
-        {
-            int k = 0;//счетчик букв имени пользователя
+    int i = 0;
+    char strname[256],
+         result[256];
+    searcHome(str1, str1);
 
-            while (str1[i] != '/')//пока не встретим символ /
+    if (str1[i] == '~')
+    {
+        i++;
+        if (str1[i] == '/')
+        {
+            return "Path relative to current user home directory.";
+        }
+        else
+        {
+            int k = 0;
+
+            while (str1[i] != '/')
             {
-                strname[k] = str1[i];//переписываем буквы в переменную с именем пользователя
-                ++i; ++k;//
+                strname[k] = str1[i];
+                ++i; ++k;
             }
-            sprintf(result,"path relative to user %s  home directory.", strname);//ура руть относительный до директории пользователя
-                                                                        //имя каторого запоинили в strname
-            return result;//возвращаем результат
+            sprintf(result,"path relative to user %s  home directory.", strname);
+
+            return result;
         }
     }
-    if (str1[i] == '/')//если строка начата с /
+    if (str1[i] == '/')
     {
-        return "Not relative path.";//блин, путь не относительный, валим отсюда.
+        return "Not relative path.";
     }
+    return 0;
+}
+
+int searcHome(char *str, char *home)
+{
+    int length = strlen(str);
+
+    int separatorCount = 0,
+        i = 0,
+        j = 0;
+
+    for(i=0; i<length && separatorCount<5; ++i)
+    {
+        if(str[i]==':')
+            ++separatorCount;
+    }
+    for(j=i; j<length && separatorCount<6; ++j)
+    {
+        if(str[j]==':')
+            ++separatorCount;
+    }
+
+    if(separatorCount!=6)
+        return 1;
+
+    j-=2;
+
+    while(str[i]==' ')
+        ++i;
+
+    strncpy(home,str+i,(j-i+1));
+
+    home[j-i+1]=0;
+
     return 0;
 }

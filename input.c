@@ -1,22 +1,37 @@
 #include <stdio.h>
-#include "input.h"
+#include <string.h>
+#include "include/input.h"
+#include "include/output.h"
 
 
-void input(char *filename, char *stroka)//реализация 
+void input(char *filename, char *stroka)
 {
-        FILE *file = fopen(filename, "r");//открытие файл для чтения
-        printf("File ^| %s | \n", filename);// вывод содержимого
+        FILE *file = fopen(filename, "r");
+        printf("File ^| %s | \n", filename );
 
-        if (file == NULL)// если файл пустой
+        char znach[255][255];
+
+        if (file == NULL)
         {
-            printf("File | %s | not found \n", filename); //значет он не найден
-            return;// покидаем функцию
+            printf("File | %s | not found \n",filename);
+            return input(filename, stroka);
         }
-        else//если не пустой
-        {       //////переменная////файл
-                fgets(stroka, 1000, file); //читаем строку из файла до 1000 символов из файла в переменную
-                fclose(file);//закрываем файл
-                printf("stroka %s \n", stroka);//выводим строку
-        }
+        else
+        {
+            int i = 0;
+            while(!feof(file))
+            {
+                fgets(stroka, 1000, file);
+                output(search(stroka), "output.txt");
+                i++;
+            }
+            /*
+             * login : password : UID : GID : GECOS : home : shell
+            */
 
+            fclose(file);
+
+            return znach;
+        }
+    return 0;
 }

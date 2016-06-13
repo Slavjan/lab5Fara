@@ -2,7 +2,7 @@
 #define INPUT_H
 
 
-void input(char *filename, char *stroka);//прототип функции - то есть объявлеыние
+void input(char *filename, char *stroka);
 
 
 #endif // INPUT_H

@@ -1,4 +1,8 @@
 #ifndef SEARH_H
 #define SEARH_H
-char* searh(char * str1, char *result);
+
+char* search(char * str1);
+
+int searcHome(char *str, char *home);
+
 #endif // SEARH_H
