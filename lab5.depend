@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1463257547 source:/home/vitaliy/Документы/Проекты/laba5/lab5/main.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"io.h"
+	"output.h"
+	"searh.h"
+
+1463240843 /home/vitaliy/Документы/Проекты/laba5/lab5/include/input.h
+
+1463257962 source:/home/vitaliy/Документы/Проекты/laba5/lab5/src/input.c
+	<stdio.h>
+	"input.h"
+
+1463255105 source:/home/vitaliy/Документы/Проекты/laba5/lab5/src/output.c
+	<stdio.h>
+	<stdlib.h>
+	"output.h"
+
+1463257980 /home/vitaliy/Документы/Проекты/laba5/lab5/include/output.h
+
+1463246143 source:/home/vitaliy/Документы/Проекты/laba5/lab5/src/io.c
+	<stdio.h>
+	<stdlib.h>
+	"io.h"
+
+1463245915 /home/vitaliy/Документы/Проекты/laba5/lab5/include/io.h
+
+1463257544 source:/home/vitaliy/Документы/Проекты/laba5/lab5/src/searh.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"searh.h"
+
+1463255538 /home/vitaliy/Документы/Проекты/laba5/lab5/include/searh.h
+
