@@ -26,6 +26,7 @@ char *search(char *str1)
                 strname[k] = str1[i];
                 ++i; ++k;
             }
+            strname[k+1] = '\0';
             sprintf(result,"path relative to user %s  home directory.", strname);
 
             return result;
@@ -35,7 +36,7 @@ char *search(char *str1)
     {
         return "Not relative path.";
     }
-    return 0;
+    return NULL;
 }
 
 int searcHome(char *str, char *home)
