@@ -6,8 +6,8 @@
 char *search(char *str1)
 {
     int i = 0;
-    char strname[256],
-         result[256];
+    char strname[256];
+    char* result = malloc(sizeof(char)*255);
     searcHome(str1, str1);
 
     if (str1[i] == '~')
@@ -15,7 +15,7 @@ char *search(char *str1)
         i++;
         if (str1[i] == '/')
         {
-            return "Path relative to current user home directory.";
+            return "Path relative to current user home directory.\n";
         }
         else
         {
@@ -26,15 +26,15 @@ char *search(char *str1)
                 strname[k] = str1[i];
                 ++i; ++k;
             }
-            strname[k+1] = '\0';
-            sprintf(result,"path relative to user %s  home directory.", strname);
+            strname[k] = '\0';
+            sprintf(result,"path relative to user %s home directory.\n", strname);
 
             return result;
         }
     }
     if (str1[i] == '/')
     {
-        return "Not relative path.";
+        return "Not relative path.\n";
     }
     return NULL;
 }
