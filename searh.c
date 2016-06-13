@@ -35,7 +35,7 @@ char *search(char *str1)
     {
         return "Not relative path.";
     }
-    return 0;
+    return NULL;
 }
 
 int searcHome(char *str, char *home)
