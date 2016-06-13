@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include "include/output.h"
 
-void output(char * znach, char *filename)
+void output(char *znach, char *filename)
 {
-    FILE * file = fopen(filename, "w+");
-    fprintf(file,"%s", znach);
+    FILE * file = fopen(filename, "a+");
+
+    fprintf(file,"%s\n", znach);
+    printf("%s\n", znach);
     fclose(file);
 }
