@@ -1,4 +1,6 @@
 root:*:0:0:Charlie &:/root:/bin/csh
+qwerty:*:0:0:*:~qwerty/tmp:/bin/csh
+fara:*:0:0:*:~fara/tmp:/bin/csh
 toor:*:0:0:Bourne-again Superuser:/root:
 daemon:*:1:1:Owner of many system processes:/root:/nonexistent
 operator:*:2:20:System &:/usr/guest/operator:~/bin/csh
