@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include "include/input.h"
-#include "include/output.h"
+#include "input.h"
+#include "output.h"
 
 
 void input(char *filename, char *stroka)
