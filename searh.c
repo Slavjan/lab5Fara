@@ -1,21 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "searh.h"
 
 char *search(char *str1)
 {
     int i = 0;
-    char strname[256],
-         result[256];
+    char strname[256];
+    char *result = malloc(sizeof(char)*255);
     searcHome(str1, str1);
-
+    char *path = str1;
     if (str1[i] == '~')
     {
         i++;
         if (str1[i] == '/')
         {
-            return "Path relative to current user home directory.";
+            sprintf(result, "%s\n ^Path relative to current user home directory.\n", path);
+            return result;
         }
         else
         {
@@ -26,14 +24,16 @@ char *search(char *str1)
                 strname[k] = str1[i];
                 ++i; ++k;
             }
-            sprintf(result,"path relative to user %s  home directory.", strname);
+            strname[k] = '\0';
+            sprintf(result,"%s\n ^Path relative to user \"%s\" home directory.\n", path, strname);
 
             return result;
         }
     }
     if (str1[i] == '/')
     {
-        return "Not relative path.";
+        sprintf(result,"%s\n ^Path ot relative path.\n", path);
+        return result;
     }
     return NULL;
 }

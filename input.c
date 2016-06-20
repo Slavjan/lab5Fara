@@ -1,15 +1,10 @@
-#include <stdio.h>
-#include <string.h>
 #include "input.h"
-#include "output.h"
 
 
 void input(char *filename, char *stroka)
 {
         FILE *file = fopen(filename, "r");
-        printf("File ^| %s | \n", filename );
-
-        char znach[255][255];
+        printf("File | %s | \n", filename );
 
         if (file == NULL)
         {
@@ -22,7 +17,8 @@ void input(char *filename, char *stroka)
             while(!feof(file))
             {
                 fgets(stroka, 1000, file);
-                output(search(stroka), "output.txt");
+                char *s = search(stroka);
+                output(s, "output.txt");
                 i++;
             }
             /*
@@ -30,8 +26,5 @@ void input(char *filename, char *stroka)
             */
 
             fclose(file);
-
-            return znach;
         }
-    return 0;
 }

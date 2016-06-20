@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "include/input.h"
+#include "input.h"
 //#include "io.h"
 
 int main()
