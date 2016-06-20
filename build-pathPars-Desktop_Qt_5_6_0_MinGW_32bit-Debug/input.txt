@@ -1,6 +1,0 @@
-root:*:0:0:Charlie &:/root:/bin/csh
-torvaldsUnix:*:0:0:*:~torvaldsUnix/tmp:/bin/csh
-fara:*:0:0:*:~fara/tmp:/bin/csh
-bin:*:3:7:Binaries Commands and Source,,,:/:/nonexistent
-games:*:7:13:Games pseudo-user:~/games:/nonexistent
-news:*:8:8:News Subsystem:/:/nonexistent
